@@ -1,0 +1,183 @@
+@light-grey: #f5f5f5;
+@blue: #50a6ef;
+@featured-background: #222;
+
+.edd-pricing-table {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+
+	margin-left: -0.5rem;
+	margin-right: -0.5rem;
+	margin-bottom: 2rem;
+
+	sup {
+		display: inline-block;
+		font-size: 16px;
+		line-height: 1;
+		top: -8px;
+		position: relative;
+		vertical-align: baseline;
+	}
+
+	ul {
+		list-style-type: none;
+		margin: 0;
+		margin-left: -1rem;
+		margin-right: -1rem;
+	}
+
+	ul li {
+		border-bottom: 1px solid @light-grey;
+		padding: 0.5rem;
+		line-height: 1.5;
+		font-size: 14px;
+		margin: 0;
+	}
+
+	li.pricing .price {
+		font-size: 32px;
+		display: block;
+	}
+
+	.period {
+		display: block;
+	}
+
+	// When all features are contained inside 1 list item
+	.features {
+		line-height: 32px;
+		border-bottom: none;
+	}
+
+	.edd-price-option {
+		display: -webkit-flex;
+		display: flex;
+		padding: 0.5rem;
+	}
+
+	.edd-pt-title {
+		font-size: 18px;
+		font-weight: 500;
+	}
+
+	.edd-pt-description {
+		font-size: 14px;
+	}
+
+	.edd-price-option > div {
+		display: -webkit-flex;
+		display: flex;
+	}
+
+	.edd-price-option > div {
+		width: 100%;
+		-webkit-flex-flow: column;
+		flex-flow: column;
+
+		text-align: center;
+		border: 2px solid @light-grey;
+		padding: 1rem;
+	}
+
+	.edd-price-option.featured > div {
+		position: relative;
+	}
+
+	.edd-price-option .featured-text {
+		padding: 0.75rem;
+		background: @featured-background;
+		margin: -1rem -1rem 1rem -1rem;
+		color: #fff;
+		display: block;
+		font-size: 16px;
+	}
+
+	.footer {
+	  	// Auto top margin pushes button to bottom
+		margin-top: auto;
+	}
+
+	.edd-pt-button {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+}
+
+.edd-price-option {
+	width: 100%;
+}
+
+.edd-pt-button {
+	display: inline-block;
+	background-color: @blue;
+	color: #fff;
+	font-size: 16px; // Define in pixels in case theme has a weird rem unit
+	padding: 0.75rem 2rem;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	outline: none;
+	text-decoration: none;
+
+	// Theme compatibility
+	// Prevent weird stuff from appearing on the buttons
+	box-shadow: none !important;
+	border: none !important;
+
+	&:hover, &:active, &:focus {
+		color: #fff !important; // important is required for some themes like Twenty Seventeen
+		background-color: darken( @blue, 10% );
+	}
+}
+
+// Small Devices, Tablets
+@media only screen and ( min-width: 720px ) {
+
+	// If the pricing table has a featured pricing option, add some top margin
+	.edd-pricing-table.has-featured {
+		margin-top: 3rem;
+	}
+
+	.edd-pricing-table .edd-price-option .featured-text {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 100%;
+		margin: 0 -2px 0 -2px;
+	}
+
+	.edd-pricing-table-columns-4 .edd-price-option {
+		width: 50%;
+	}
+
+	.edd-pricing-table-columns-2 .edd-price-option {
+		width: 50%;
+	}
+
+}
+
+// Medium Devices, Desktops
+@media only screen and ( min-width: 992px ) {
+
+	// the default
+	.edd-pricing-table-columns-3 .edd-price-option {
+		width: 33.333333333%;
+	}
+
+}
+
+// Large Devices, Wide Screens
+@media only screen and ( min-width: 1200px ) {
+	.edd-pricing-table-columns-4 .edd-price-option {
+		width: 25%;
+	}
+}

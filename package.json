@@ -1,0 +1,20 @@
+{
+  "name": "edd-pricing-tables",
+  "version": "1.0.0",
+  "theme_uri": "https://easydigitaldownloads.com/",
+  "homepage": "https://easydigitaldownloads.com/",
+  "repository": {
+      "type": "",
+      "url": ""
+  },
+  "license": "GPL-2.0",
+  "Dependencies": {
+     "grunt-cli": "latest"
+  },
+  "devDependencies": {
+    "grunt" : "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-watch": "latest",
+    "matchdep": "*"
+  }
+}

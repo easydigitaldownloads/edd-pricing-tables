@@ -20,9 +20,12 @@ Features:
 - Easy pricing table creation and management. Add features to your download and display the pricing table using the included shortcode.
 - Variable pricing support. Drag and drop your existing pricing options to change the order of the downloads shown
 - Multiple download support. Create a pricing table with completely separate downloads by using the included shortcode.
-- Developer-friendly. No inline CSS styling. Easy to customize via simple CSS or hooks. Display a pricing table anywhere using the shortcode or included function call.
+- Developer-friendly. No inline CSS styling. No custom post types. Easy to customize via simple CSS or hooks. Display a pricing table anywhere using the shortcode or included function call.
 - Easy Digital Downloads integration. If the download (or variable pricing option) is added to the cart but the customer returns to the pricing page, the button on the pricing table will show "checkout".
 - Advanced options. Override the pricing option name, enter a description, enter the period, feature any pricing option, change the button text.
+- Responsive design
+- Feature any pricing option
+- Supports any theme using Easy Digital Downloads
 
 == Installation ==
 

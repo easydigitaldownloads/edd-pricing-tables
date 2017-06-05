@@ -66,7 +66,6 @@ if ( ! class_exists( 'EDD_Pricing_Tables' ) ) {
 				self::$instance->setup_constants();
 				self::$instance->includes();
 				self::$instance->setup_actions();
-				self::$instance->licensing();
 				self::$instance->load_textdomain();
 				self::$instance->frontend = new EDD_Pricing_Tables_Frontend;
 			}
@@ -100,7 +99,6 @@ if ( ! class_exists( 'EDD_Pricing_Tables' ) ) {
 				define( 'EDD_PT_VERSION', $this->version );
 			}
 
-
 			// Plugin Folder Path
 			if ( ! defined( 'EDD_PT_PLUGIN_DIR' ) ) {
 				define( 'EDD_PT_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
@@ -131,18 +129,6 @@ if ( ! class_exists( 'EDD_Pricing_Tables' ) ) {
 
 			do_action( 'edd_pricing_tables_setup_actions' );
 
-		}
-
-		/**
-		 * Licensing
-		 *
-		 * @since 1.0
-		*/
-		private function licensing() {
-			// check if EDD_License class exists
-			if ( class_exists( 'EDD_License' ) ) {
-				$license = new EDD_License( __FILE__, $this->title, $this->version, 'Andrew Munro' );
-			}
 		}
 
 		/**

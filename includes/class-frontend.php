@@ -25,12 +25,13 @@ class EDD_Pricing_Tables_Frontend {
 
 		if ( $download_id ) {
 
-			// one download to build a table with, could have variable priced options
+			// One download to build a table with, could have variable priced options.
 			$this->pricing_table_single( $download_id );
 
 		} elseif ( $download_ids ) {
 
-			// to do: multiple download support
+			// Multiple downloads.
+			$this->pricing_table_multiple( $download_ids );
 
 		}
 
@@ -172,6 +173,11 @@ class EDD_Pricing_Tables_Frontend {
 		<?php endif; ?>
 		</div>
 		<?php
+	}
+
+
+	public function pricing_table_multiple( $download_ids ) {
+
 	}
 
 	/**

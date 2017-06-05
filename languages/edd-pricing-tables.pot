@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Easy Digital Downloads - Pricing Tables\n"
-"POT-Creation-Date: 2017-05-29 18:30+1200\n"
+"POT-Creation-Date: 2017-06-05 21:17+1200\n"
 "PO-Revision-Date: 2015-04-04 11:12-0600\n"
 "Last-Translator: Andrew Munro, Sumobi <andrew@sumobi.com>\n"
 "Language-Team: Easy Digital Downloads <support@easydigitaldownloads.com>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
 
-#: edd-pricing-tables.php:197
+#: edd-pricing-tables.php:194
 msgid "Settings"
 msgstr ""
 
@@ -36,86 +36,74 @@ msgstr ""
 msgid " requires %sEasy Digital Downloads%s. Please install it to continue."
 msgstr ""
 
-#: includes/class-admin.php:37
+#: includes/class-admin.php:34
 msgid "Create pricing table"
 msgstr ""
 
-#: includes/class-admin.php:38
-msgid "Check this box to create a pricing table."
-msgstr ""
-
-#: includes/class-admin.php:52
+#: includes/class-admin.php:47
 msgid "Show advanced options"
 msgstr ""
 
-#: includes/class-admin.php:53
-msgid "Enable advanced options"
+#: includes/class-admin.php:86 includes/class-admin.php:185
+msgid "Pricing Option Name"
 msgstr ""
 
-#: includes/class-admin.php:97
-msgid "Pricing option name"
-msgstr ""
-
-#: includes/class-admin.php:100
+#: includes/class-admin.php:89
 msgid "Entering a pricing option name here will override the variable pricing option name above."
 msgstr ""
 
-#: includes/class-admin.php:110
-msgid "Pricing option description"
+#: includes/class-admin.php:99 includes/class-admin.php:198
+msgid "Pricing Option Description"
 msgstr ""
 
-#: includes/class-admin.php:113
+#: includes/class-admin.php:102 includes/class-admin.php:201
 msgid "Enter a pricing option description."
 msgstr ""
 
-#: includes/class-admin.php:123
-msgid "Period"
+#: includes/class-admin.php:112 includes/class-admin.php:211
+msgid "Pricing Option Period"
 msgstr ""
 
-#: includes/class-admin.php:126
+#: includes/class-admin.php:115 includes/class-admin.php:214
 msgid "Entering a pricing option period. E.g. per year."
 msgstr ""
 
-#: includes/class-admin.php:136
+#: includes/class-admin.php:125
 msgid "Features"
 msgstr ""
 
-#: includes/class-admin.php:140
+#: includes/class-admin.php:129
 msgid "Enter features for this pricing option, one per line."
 msgstr ""
 
-#: includes/class-admin.php:150
-msgid "Featured text"
+#: includes/class-admin.php:139 includes/class-admin.php:232
+msgid "Featured Text"
 msgstr ""
 
-#: includes/class-admin.php:153
+#: includes/class-admin.php:142 includes/class-admin.php:235
 msgid "Make this pricing option featured by entering text, E.g. Most popular."
 msgstr ""
 
-#: includes/class-admin.php:163
-msgid "Button text"
+#: includes/class-admin.php:152 includes/class-admin.php:245
+msgid "Button Text"
 msgstr ""
 
-#: includes/class-admin.php:166
+#: includes/class-admin.php:155 includes/class-admin.php:248
 msgid "E.g. Purchase"
 msgstr ""
 
-#: includes/class-admin.php:184
+#: includes/class-admin.php:188
+msgid "Entering an option title here will replace the download title on the pricing table."
+msgstr ""
+
+#: includes/class-admin.php:223
 msgid "Enter one feature per line."
 msgstr ""
 
-#: includes/class-admin.php:190
-msgid "Feature this pricing option"
-msgstr ""
-
-#: includes/class-admin.php:191
-msgid "Feature this pricing option."
-msgstr ""
-
-#: includes/class-frontend.php:117 includes/class-frontend.php:260
+#: includes/class-frontend.php:106 includes/class-frontend.php:283
 msgid "Purchase"
 msgstr ""
 
-#: includes/class-frontend.php:348
+#: includes/class-frontend.php:405
 msgid "Checkout"
 msgstr ""

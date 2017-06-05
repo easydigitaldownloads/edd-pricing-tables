@@ -43,6 +43,15 @@ if ( ! class_exists( 'EDD_Pricing_Tables' ) ) {
 		public $title = 'EDD Pricing Tables';
 
 		/**
+		 * The frontend instance variable.
+		 *
+		 * @access public
+		 * @since  1.0
+		 * @var    object
+		 */
+		public $frontend;
+
+		/**
 		 * Main Instance
 		 *
 		 * Ensures that only one instance exists in memory at any one
@@ -59,10 +68,12 @@ if ( ! class_exists( 'EDD_Pricing_Tables' ) ) {
 				self::$instance->setup_actions();
 				self::$instance->licensing();
 				self::$instance->load_textdomain();
+				self::$instance->frontend = new EDD_Pricing_Tables_Frontend;
 			}
 
 			return self::$instance;
 		}
+
 
 		/**
 		 * Constructor Function

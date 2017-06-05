@@ -21,8 +21,7 @@ class EDD_Pricing_Tables_Shortcodes {
 			'ids' => '',
 		), $atts, 'edd_pricing_table' );
 
-		$edd_pricing_tables = new EDD_Pricing_Tables_Frontend;
-		$content            = $edd_pricing_tables->edd_pricing_table( $atts );
+		$content = edd_pricing_tables()->frontend->edd_pricing_table( $atts );
 
 		return do_shortcode( $content );
 

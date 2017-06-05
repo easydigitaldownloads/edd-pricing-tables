@@ -22,7 +22,6 @@ module.exports = function(grunt) {
 
       // CSS
       css: {
-        // compile CSS when any .less file is compiled in this theme and also the parent theme
         files: ['assets/less/**/*.less'],
         tasks: ['less:style'],
       },

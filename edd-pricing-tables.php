@@ -13,7 +13,6 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-
 if ( ! class_exists( 'EDD_Pricing_Tables' ) ) {
 
 	class EDD_Pricing_Tables {
@@ -109,11 +108,6 @@ if ( ! class_exists( 'EDD_Pricing_Tables' ) ) {
 				define( 'EDD_PT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 			}
 
-			// Plugin Root File
-			if ( ! defined( 'EDD_PT_PLUGIN_FILE' ) ) {
-				define( 'EDD_PT_PLUGIN_FILE', __FILE__ );
-			}
-
 		}
 
 		/**
@@ -124,11 +118,7 @@ if ( ! class_exists( 'EDD_Pricing_Tables' ) ) {
 		 * @return void
 		 */
 		private function setup_actions() {
-
-			add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'settings_link' ), 10, 2 );
-
 			do_action( 'edd_pricing_tables_setup_actions' );
-
 		}
 
 		/**
@@ -145,8 +135,8 @@ if ( ! class_exists( 'EDD_Pricing_Tables' ) ) {
 			$lang_dir = apply_filters( 'edd_pricing_tables_languages_directory', $lang_dir );
 
 			// Traditional WordPress plugin locale filter
-			$locale        = apply_filters( 'plugin_locale',  get_locale(), 'edd-pricing-tables' );
-			$mofile        = sprintf( '%1$s-%2$s.mo', 'edd-pricing-tables', $locale );
+			$locale = apply_filters( 'plugin_locale',  get_locale(), 'edd-pricing-tables' );
+			$mofile = sprintf( '%1$s-%2$s.mo', 'edd-pricing-tables', $locale );
 
 			// Setup paths to current locale file
 			$mofile_local  = $lang_dir . $mofile;
@@ -182,19 +172,6 @@ if ( ! class_exists( 'EDD_Pricing_Tables' ) ) {
 				require_once( EDD_PT_PLUGIN_DIR . 'includes/class-admin.php' );
 			}
 
-		}
-
-		/**
-		 * Plugin settings link
-		 *
-		 * @since 1.1
-		*/
-		public function settings_link( $links ) {
-			$plugin_links = array(
-				'<a href="' . admin_url( 'edit.php?post_type=download&page=edd-settings&tab=extensions' ) . '">' . __( 'Settings', 'edd-pricing-tables' ) . '</a>',
-			);
-
-			return array_merge( $plugin_links, $links );
 		}
 
 	}

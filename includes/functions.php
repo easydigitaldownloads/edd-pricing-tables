@@ -16,6 +16,7 @@ function edd_pricing_tables_has_featured( $download_id = 0 ) {
 
 	$price_options = edd_get_variable_prices( $download_id );
 
+	// Check a variable priced download
 	if ( $price_options ) {
 		foreach ( $price_options as $price_id => $price_option ) {
 
@@ -25,6 +26,11 @@ function edd_pricing_tables_has_featured( $download_id = 0 ) {
 			}
 
 		}
+	}
+
+	// Check a normal download
+	if ( get_post_meta( $download_id, '_edd_pricing_tables_featured_text', true ) ) {
+		$has_featured = true;
 	}
 
 	return $has_featured;

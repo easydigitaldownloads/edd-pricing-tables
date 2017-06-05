@@ -23,6 +23,8 @@ class EDD_Pricing_Tables_Frontend {
 		// Filters the currency to wrap the currency symbol in a <sup> tag and the price in a <span> tag.
 		add_filter( 'edd_' . strtolower( edd_get_currency() ) . '_currency_filter_before', 'edd_pricing_tables_filter_currency', 10, 3 );
 
+		ob_start();
+
 		if ( $download_id ) {
 
 			// One download to build a table with, could have variable priced options.

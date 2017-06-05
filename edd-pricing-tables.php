@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Easy Digital Downloads - Pricing Tables
-Plugin URI: https://easydigitaldownloads.com/
+Plugin URI: https://easydigitaldownloads.com/downloads/pricing-tables/
 Description: Easily create pricing tables for your downloads
 Version: 1.0
 Author: Easy Digital Downloads

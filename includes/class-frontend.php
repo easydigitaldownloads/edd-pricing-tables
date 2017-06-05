@@ -202,6 +202,11 @@ class EDD_Pricing_Tables_Frontend {
 					unset( $download_ids[$key]);
 				}
 
+				// Unset any variable priced download.
+				if ( edd_get_variable_prices( $download_id ) ) {
+					unset( $download_ids[$key]);
+				}
+
 				// Determine if at least one of the downloads has been featured.
 				if ( edd_pricing_tables_has_featured( $download_id ) ) {
 					$has_featured = true;

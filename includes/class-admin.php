@@ -83,7 +83,7 @@ class EDD_Pricing_Tables_Admin {
 								?>
 								<div class="edd-pricing-tables-option-wrap edd-pricing-tables-option-advanced" style="display: none;">
 									<p>
-										<strong><label for="edd-pricing-table-pricing-option-name-<?php echo $key;?>"><?php _e( 'Pricing option name', 'edd-pricing-tables' ); ?></label></strong>
+										<strong><label for="edd-pricing-table-pricing-option-name-<?php echo $key;?>"><?php _e( 'Pricing Option Name', 'edd-pricing-tables' ); ?></label></strong>
 									</p>
 									<input class="large-text" type="text" name="edd_variable_prices[<?php echo $key; ?>][pricing_option_name]" id="edd-pricing-table-pricing-option-name-<?php echo $key;?>" value="<?php echo esc_attr( $pricing_option_name ); ?>" />
 									<p class="description"><?php _e( 'Entering a pricing option name here will override the variable pricing option name above.', 'edd-pricing-tables' );  ?></p>
@@ -96,7 +96,7 @@ class EDD_Pricing_Tables_Admin {
 								?>
 								<div class="edd-pricing-tables-option-wrap edd-pricing-tables-option-advanced" style="display: none;">
 									<p>
-										<strong><label for="edd-pricing-table-pricing-option-description-<?php echo $key;?>"><?php _e( 'Pricing option description', 'edd-pricing-tables' ); ?></label></strong>
+										<strong><label for="edd-pricing-table-pricing-option-description-<?php echo $key;?>"><?php _e( 'Pricing Option Description', 'edd-pricing-tables' ); ?></label></strong>
 									</p>
 									<input class="large-text" type="text" name="edd_variable_prices[<?php echo $key; ?>][pricing_option_description]" id="edd-pricing-table-pricing-option-description-<?php echo $key;?>" value="<?php echo esc_attr( $pricing_option_description ); ?>" />
 									<p class="description"><?php _e( 'Enter a pricing option description.', 'edd-pricing-tables' );  ?></p>
@@ -109,7 +109,7 @@ class EDD_Pricing_Tables_Admin {
 								?>
 								<div class="edd-pricing-tables-option-wrap edd-pricing-tables-option-advanced" style="display: none;">
 									<p>
-										<strong><label for="edd-pricing-table-pricing-option-name-<?php echo $key;?>"><?php _e( 'Period', 'edd-pricing-tables' ); ?></label></strong>
+										<strong><label for="edd-pricing-table-pricing-option-name-<?php echo $key;?>"><?php _e( 'Pricing Option Period', 'edd-pricing-tables' ); ?></label></strong>
 									</p>
 									<input class="large-text" type="text" name="edd_variable_prices[<?php echo $key; ?>][pricing_option_period]" id="edd-pricing-table-pricing-option-period-<?php echo $key;?>" value="<?php echo esc_attr( $pricing_option_period ); ?>" />
 									<p class="description"><?php _e( 'Entering a pricing option period. E.g. per year.', 'edd-pricing-tables' );  ?></p>
@@ -136,7 +136,7 @@ class EDD_Pricing_Tables_Admin {
 								?>
 								<div class="edd-pricing-tables-option-wrap edd-pricing-tables-option-advanced" style="display: none;">
 									<p>
-										<strong><label for="edd-pricing-table-featured-text-<?php echo $key;?>"><?php _e( 'Featured text', 'edd-pricing-tables' ); ?></label></strong>
+										<strong><label for="edd-pricing-table-featured-text-<?php echo $key;?>"><?php _e( 'Featured Text', 'edd-pricing-tables' ); ?></label></strong>
 									</p>
 									<input class="large-text" type="text" name="edd_variable_prices[<?php echo $key; ?>][featured_text]" id="edd-pricing-table-featured-text-<?php echo $key;?>" value="<?php echo esc_attr( $featured_text ); ?>" />
 									<p class="description"><?php _e( 'Make this pricing option featured by entering text, E.g. Most popular.', 'edd-pricing-tables' );  ?></p>
@@ -149,7 +149,7 @@ class EDD_Pricing_Tables_Admin {
 								?>
 								<div class="edd-pricing-tables-option-wrap edd-pricing-tables-option-advanced" style="display: none;">
 									<p>
-										<strong><label for="edd-pricing-table-button-text-<?php echo $key;?>"><?php _e( 'Button text', 'edd-pricing-tables' ); ?></label></strong>
+										<strong><label for="edd-pricing-table-button-text-<?php echo $key;?>"><?php _e( 'Button Text', 'edd-pricing-tables' ); ?></label></strong>
 									</p>
 									<input class="large-text" type="text" name="edd_variable_prices[<?php echo $key; ?>][button_text]" id="edd-pricing-table-featured-text-<?php echo $key;?>" value="<?php echo esc_attr( $button_text ); ?>" />
 									<p class="description"><?php _e( 'E.g. Purchase', 'edd-pricing-tables' );  ?></p>
@@ -162,11 +162,93 @@ class EDD_Pricing_Tables_Admin {
 				<?php endif; ?>
 				</div>
 
+
 			<?php else : // single download ?>
 
 				<?php
-				// to do
+				$features      = get_post_meta( $download_id, '_edd_pricing_tables_features', true );
+				$featured_text = get_post_meta( $download_id, '_edd_pricing_tables_featured_text', true );
+				$button_text   = get_post_meta( $download_id, '_edd_pricing_tables_button_text', true );
+				$option_name   = get_post_meta( $download_id, '_edd_pricing_tables_option_name', true );
+				$option_desc   = get_post_meta( $download_id, '_edd_pricing_tables_option_description', true );
+				$option_period = get_post_meta( $download_id, '_edd_pricing_tables_option_period', true );
 				?>
+				<div>
+
+					<?php
+					/**
+					 * Pricing option name
+					 */
+					?>
+					<div class="edd-pricing-tables-option-wrap edd-pricing-tables-option-advanced" style="display: none;">
+						<p>
+							<strong><label for="edd-pricing-table-option-name"><?php _e( 'Pricing Option Name', 'edd-pricing-tables' ); ?></label></strong>
+						</p>
+						<input class="large-text" type="text" name="_edd_pricing_tables_option_title" id="edd-pricing-table-option-name" value="<?php echo esc_attr( $option_name ); ?>" />
+						<p class="description"><?php _e( 'Entering an option title here will replace the download title on the pricing table.', 'edd-pricing-tables' );  ?></p>
+					</div>
+
+					<?php
+					/**
+					 * Pricing option description
+					 */
+					?>
+					<div class="edd-pricing-tables-option-wrap edd-pricing-tables-option-advanced" style="display: none;">
+						<p>
+							<strong><label for="edd-pricing-table-option-description"><?php _e( 'Pricing Option Description', 'edd-pricing-tables' ); ?></label></strong>
+						</p>
+						<input class="large-text" type="text" name="_edd_pricing_tables_option_description" id="edd-pricing-table-option-description" value="<?php echo esc_attr( $option_desc ); ?>" />
+						<p class="description"><?php _e( 'Enter a pricing option description.', 'edd-pricing-tables' );  ?></p>
+					</div>
+
+					<?php
+					/**
+					 * Pricing period
+					 */
+					?>
+					<div class="edd-pricing-tables-option-wrap edd-pricing-tables-option-advanced" style="display: none;">
+						<p>
+							<strong><label for="edd-pricing-table-option-period"><?php _e( 'Pricing Option Period', 'edd-pricing-tables' ); ?></label></strong>
+						</p>
+						<input class="large-text" type="text" name="_edd_pricing_tables_option_period" id="edd-pricing-table-option-period" value="<?php echo esc_attr( $option_period ); ?>" />
+						<p class="description"><?php _e( 'Entering a pricing option period. E.g. per year.', 'edd-pricing-tables' );  ?></p>
+					</div>
+
+					<?php
+					/**
+					 * Features
+					 */
+					?>
+					<textarea style="width:100%;" rows="5" class="large-textarea" name="_edd_pricing_tables_features" id="edd-pricing-table-features-field"><?php echo esc_textarea( $features ); ?></textarea>
+					<p><?php _e( 'Enter one feature per line.', 'easy-digital-downloads' ); ?></p>
+
+					<?php
+					/**
+					 * Featured text
+					 */
+					?>
+					<div class="edd-pricing-tables-option-wrap edd-pricing-tables-option-advanced" style="display: none;">
+						<p>
+							<strong><label for="edd-pricing-table-featured-text"><?php _e( 'Featured Text', 'edd-pricing-tables' ); ?></label></strong>
+						</p>
+						<input class="large-text" type="text" name="_edd_pricing_tables_featured_text" id="edd-pricing-table-featured-text" value="<?php echo esc_attr( $featured_text ); ?>" />
+						<p class="description"><?php _e( 'Make this pricing option featured by entering text, E.g. Most popular.', 'edd-pricing-tables' );  ?></p>
+					</div>
+
+					<?php
+					/**
+					 * Button text
+					 */
+					?>
+					<div class="edd-pricing-tables-option-wrap edd-pricing-tables-option-advanced" style="display: none;">
+						<p>
+							<strong><label for="edd-pricing-table-button-text"><?php _e( 'Button Text', 'edd-pricing-tables' ); ?></label></strong>
+						</p>
+						<input class="large-text" type="text" name="_edd_pricing_tables_button_text" id="edd-pricing-table-button-text" value="<?php echo esc_attr( $button_text ); ?>" />
+						<p class="description"><?php _e( 'E.g. Purchase', 'edd-pricing-tables' );  ?></p>
+					</div>
+
+				</div>
 
 			<?php endif; ?>
 
@@ -181,6 +263,15 @@ class EDD_Pricing_Tables_Admin {
 
 		$fields[] = '_edd_pricing_table';
 		$fields[] = '_edd_pricing_table_advanced_options';
+
+		// Single download
+		$fields[] = '_edd_pricing_tables_features';
+		$fields[] = '_edd_pricing_tables_featured_text';
+		$fields[] = '_edd_pricing_tables_button_text';
+		$fields[] = '_edd_pricing_tables_option_name';
+		$fields[] = '_edd_pricing_tables_option_description';
+		$fields[] = '_edd_pricing_tables_option_period';
+
 
 		return $fields;
 

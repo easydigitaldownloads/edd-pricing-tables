@@ -33,11 +33,18 @@
 	}
 
 	ul li {
-		border-bottom: 1px solid @light-grey;
 		padding: 0.5rem;
 		line-height: 1.5;
 		font-size: 14px;
 		margin: 0;
+	}
+
+	li.pricing + .edd-pt-feature {
+		border-top: 1px solid @light-grey;
+	}
+
+	li.edd-pt-feature {
+		 border-bottom: 1px solid @light-grey;
 	}
 
 	li.pricing .price {
@@ -144,7 +151,7 @@
 
 	// If the pricing table has a featured pricing option, add some top margin
 	.edd-pricing-table.has-featured {
-		margin-top: 3rem;
+		margin-top: 4rem;
 	}
 
 	.edd-pricing-table .edd-price-option .featured-text {
